@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 # initalize pico_sdk from installed location
 # (note this can come from environment, CMake cache etc)
-set(PICO_SDK_PATH "C:/Users/Arjan/Documents/Pico/pico-sdk")
+set(PICO_SDK_PATH "/opt/RP2040/pico/pico-sdk")
 
 # Pull in Raspberry Pi Pico SDK (must be before project)
 include(pico_sdk_import.cmake)
@@ -28,8 +28,8 @@ pico_set_program_version(uSDR "0.1")
 target_link_libraries(uSDR pico_stdlib)
 
 # Disable uart output, enable usb output
-pico_enable_stdio_uart(uSDR 1)
-pico_enable_stdio_usb(uSDR 0)
+pico_enable_stdio_uart(uSDR 0)
+pico_enable_stdio_usb(uSDR 1)
 
 
 # Add any user requested libraries

@@ -44,14 +44,14 @@
 
 /** User selectable definitions **/
 // Set I2C address
-//#define I2C_LCD				0x27
-#define I2C_LCD				0x3E
+#define I2C_LCD				0x27
+//#define I2C_LCD				0x3E
 
 // Select LCD type matching your HW
 #define LCD_1804			0						// Seeed / Grove
 #define LCD_8574_ADA		1						// Adafruit I2C backpack
 #define LCD_8574_GEN		2						// Generic I2C backpack
-#define LCD_TYPE			LCD_1804
+#define LCD_TYPE			LCD_8574_GEN
 
 
 /** HD44780 interface **/
@@ -111,7 +111,7 @@
 #define LCD_DATA_GEN		0x01
 #define LCD_ENABLE_GEN		0x04
 #define LCD_BACKLIGHT_GEN	0x08
-#define LCD_INIT_GEN		(LCD_FUNCTIONSET | LCD_4BITMODE | LCD_2LINE | LCD_5x8DOTS)
+#define LCD_INIT_GEN		(LCD_FUNCTIONSET | LCD_8BITMODE | LCD_2LINE | LCD_5x8DOTS)
 
 #if (LCD_TYPE == LCD_1804)
 #define LCD_START			LCD_INIT_1804
